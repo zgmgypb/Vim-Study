@@ -1,0 +1,13 @@
+.blog, .news{ background-image: url(/sprite.png); }
+.blog { background-position: 0px 0px }
+.news { background-position: 0px 0px }
+.news { background-position: -180px 0px }
+.news { background-position: -360px 0px }
+.news { background-position: -540px 0px }
+.news { background-position: -720px 0px }
+.news { background-position: -900px 0px }
+.news { background-position: -1080px 0px }
+.news { background-position: -1260px 0px }
+.news { background-position: -1440px 0px }
+.news { background-position: -1620px 0px }
+.news { background-position: -1800px 0px }
