@@ -1,4 +1,10 @@
 Practical Vim, by Drew Neil
 Read Drew Neil's Practical Vim.ģ
 
+Reading Practical!
+这是一段中文测试！e
+{ሴbば
+<Right>éK
+
+
 
