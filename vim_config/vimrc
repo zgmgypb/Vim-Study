@@ -1,0 +1,43 @@
+set nocompatible
+set nu
+syntax on
+set incsearch
+set backspace=indent,eol,start
+set autoindent
+set complete=k,.
+
+"设置命令自动补全命令方式与 bash shell 的行为一致
+set wildmenu
+set wildmode=longest,list
+
+"映射命令行回溯历史按键
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+
+set showcmd
+set ruler
+set hlsearch
+filetype plugin indent on
+set cmdheight=2
+set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
+
+set nobackup
+let NERDTreeWinPos='right'
+map <F6> :NERDTreeToggle<CR>
+map <F5> :TlistToggle<CR>
+
+if has("cscope")
+	set csprg=/usr/bin/cscope
+	set csto=0
+	set cst
+	set nocsverb
+	if filereadable("cscope.out")
+		cs add cscope.out
+	elseif $CSCOPE_DB != ""
+		cs add $CSCOPE_DB
+	endif
+	set csverb
+	set cscopequickfix=s-,c-,d-,i-,t-,e-
+	nmap <C-n> :cnext<CR>
+	nmap <C-p> :cprev<CR>
+endif
