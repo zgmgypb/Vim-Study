@@ -20,6 +20,9 @@ nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
 
+"实用 %% 扩展当前缓冲区所在目录的路径
+cnoremap <expr>%% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
 set showcmd
 set ruler
 set hlsearch
