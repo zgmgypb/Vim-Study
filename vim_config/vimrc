@@ -14,6 +14,12 @@ set wildmode=longest,list
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
+"设置多个文件的快速切换组合键映射，避免使用命令的方式
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
+
 set showcmd
 set ruler
 set hlsearch
