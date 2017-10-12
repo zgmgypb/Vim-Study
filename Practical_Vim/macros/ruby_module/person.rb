@@ -7,6 +7,10 @@
 # Visit http://www.pragmaticprogrammer.com/titles/dnvim for more book information.
 #---
 # ...[end of copyright notice]
-class Person
-  # implementation...
+module Rank
+  module Rank
+    class Person
+      # implementation...
+    end
+  end
 end

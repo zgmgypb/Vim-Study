@@ -7,6 +7,10 @@
 # Visit http://www.pragmaticprogrammer.com/titles/dnvim for more book information.
 #---
 # ...[end of copyright notice]
-class Frog
-  # implementation...
+module Rank
+  module Rank
+    class Frog
+      # implementation...
+    end
+  end
 end

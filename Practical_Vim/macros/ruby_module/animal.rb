@@ -7,6 +7,10 @@
 # Visit http://www.pragmaticprogrammer.com/titles/dnvim for more book information.
 #---
 # ...[end of copyright notice]
-class Animal
-  # implementation
+module Rank
+  module Rank
+    class Animal
+      # implementation
+    end
+  end
 end
