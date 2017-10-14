@@ -1,0 +1,6 @@
+The string contains a "quoted" word.
+This string contains "two" quoted "words".
+This "string doesn't make things easy."
+
+She sells sea shells by the sea shore.
+She sells sea shells by the sea shore.

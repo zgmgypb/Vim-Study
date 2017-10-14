@@ -1,3 +1,17 @@
+"要使用扩展很多功能，需要先设置这两个参数
+set nocompatible
+filetype plugin on
+
+"设置 * 进行 visual 模式下选择的文本搜索
+xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
+xnoremap # :<C-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
+function! s:VSetSearch()
+	let temp = @s
+	norm! gv"sy
+	let @/ = '\V' . substitute(escape(@s, '/\'), '\n', '\\n', 'g')
+	let @s = temp
+endfunction
+
 "定义更新 ctags 文件
 function! UpdateCtags()
 	let curdir=getcwd()
@@ -16,7 +30,6 @@ endfunction
 "映射 <F10> 作为 ctags 更新按键
 nmap <F10> :call UpdateCtags()<CR>
 
-set nocompatible
 set nu
 syntax on
 set incsearch
