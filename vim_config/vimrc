@@ -2,9 +2,6 @@
 set nocompatible
 filetype plugin on
 
-"激活拼写检查功能
-:set spell 
-
 "设置 * 进行 visual 模式下选择的文本搜索
 xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
 xnoremap # :<C-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
@@ -13,16 +10,6 @@ function! s:VSetSearch()
 	norm! gv"sy
 	let @/ = '\V' . substitute(escape(@s, '/\'), '\n', '\\n', 'g')
 	let @s = temp
-endfunction
-
-"设置使用 Qargs 命令将 quickfix 列表中的文件加入 args 列表中
-command! -nargs=0 -bar Qargs execute 'args' QuickfixFilenames()
-function! QuickfixFilenames()
-	let buffer_numbers = {}
-	for quickfix_item in getqflist()
-		let buffer_numbers[quickfix_item['bufnr']] = bufname(quickfix_item['bufnr'])
-	endfor
-	return join(map(values(buffer_numbers), 'fnameescape(v:val)'))
 endfunction
 
 "定义更新 ctags 文件
@@ -78,6 +65,9 @@ set nobackup
 let NERDTreeWinPos='right'
 map <F6> :NERDTreeToggle<CR>
 map <F5> :TlistToggle<CR>
+
+"避免出现跳转 tags 时出现重复的标签
+set tags=./tags,tags
 
 if has("cscope")
 	set csprg=/usr/bin/cscope
