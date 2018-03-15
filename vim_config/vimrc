@@ -72,7 +72,9 @@ set ruler
 set hlsearch
 filetype plugin indent on
 set cmdheight=2
-set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
+
+" 设置文件编码方式自动识别打开
+set fileencodings=cp936,ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
 
 set nobackup
 let NERDTreeWinPos='right'
@@ -94,3 +96,13 @@ if has("cscope")
 	nmap <C-n> :cnext<CR>
 	nmap <C-p> :cprev<CR>
 endif
+
+function QfMakeConv()
+	let qflist = getqflist()
+	for i in qflist
+		let i.text = iconv(i.text, "cp936", "utf-8")
+	endfor
+	call setqflist(qflist)
+endfunction
+
+au QuickfixCmdPost make call QfMakeConv()
