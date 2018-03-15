@@ -70,7 +70,7 @@ map <F5> :TlistToggle<CR>
 set tags=./tags,tags
 
 if has("cscope")
-	set csprg=/usr/bin/cscope
+	set csprg=cscope
 	set csto=0
 	set cst
 	set nocsverb
