@@ -74,6 +74,8 @@ set cmdheight=2
 
 " 设置 tab 宽度为 4，这样有利于编辑
 set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 
 " 设置文件编码方式自动识别打开
 set fileencodings=cp936,ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
